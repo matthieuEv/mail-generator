@@ -1,8 +1,6 @@
-<div style="text-align: center;">
-  <a href="https://pypi.org/project/mail-Generator/" target="_blank">
-    <img src="https://github.com/matthieuEv/mail-generator/blob/main/logo.png?raw=true" alt="Logo" width="400">
-  </a>
-</div>
+<a align="center" href="https://pypi.org/project/mail-Generator/" target="_blank">
+  <img src="https://github.com/matthieuEv/mail-generator/blob/main/logo.png?raw=true" alt="Logo">
+</a>
 
 
 # Mail-generator
