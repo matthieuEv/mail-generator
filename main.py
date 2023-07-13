@@ -2,14 +2,11 @@ import mailslurp_client
 import os
 from dotenv import load_dotenv # pip install python-dotenv
 import json
-import base64
 
 load_dotenv()
 api_key = os.getenv('API_KEY')
-
-configuration = mailslurp_client.Configuration()
-configuration.api_key['x-api-key'] = api_key
-
+if api_key is None:
+    raise ValueError("API_KEY not found in .env file. Please create a .env file with the API_KEY variable.")
 
 configuration = mailslurp_client.Configuration()
 configuration.api_key['x-api-key'] = api_key
@@ -32,7 +29,7 @@ def createEmail() -> str:
             error_message = error_body.get('message')
             return(error_message)
 
-def getEmailData(inbox_id):
+def getEmailData(inbox_id) -> list:
     """
     Get the data of the emails in the inbox.
 
@@ -66,8 +63,8 @@ def getEmailData(inbox_id):
 
 
 if __name__ == '__main__':
-    # id = createEmail()
-    # print(id+"@mailslurp.com")
-    # input("Press Enter to continue...")
+    id = createEmail()
+    print(id+"@mailslurp.com")
+    input("Press Enter to continue...")
     for element in getEmailData("70db6f58-2ff6-4b31-b461-2e84bd1f6f81"):
         print(element,'\n\n\n')
