@@ -5,11 +5,10 @@ with open('README.md', 'r') as f:
 
 setup(
     name='Mail-Generator',
-    version='0.1.1',
+    version='0.1.2',
     packages=find_packages(),
     install_requires=[
         'mailslurp-client',
-        'python-dotenv'
     ],
     entry_points={
         'console_scripts': [

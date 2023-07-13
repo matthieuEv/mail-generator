@@ -1,12 +1,10 @@
 import mailslurp_client
 import os
-from dotenv import load_dotenv  # pip install python-dotenv
+from dotenv import load_dotenv
 import json
 
 class MailGenerator:
-    def __init__(self):
-        load_dotenv()
-        api_key = os.getenv('API_KEY')
+    def __init__(self, api_key: str):
         if api_key is None:
             raise ValueError("API_KEY not found in .env file. Please create a .env file with the API_KEY variable.")
 
@@ -63,7 +61,9 @@ class MailGenerator:
 
 
 if __name__ == '__main__':
-    client = MailSlurpClient()
+    load_dotenv()
+    api_key = os.getenv('API_KEY')
+    client = MailGenerator(api_key)
     id = client.create_email()
     print(id + "@mailslurp.com")
     input("Press Enter to continue...")
