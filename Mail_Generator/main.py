@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv  # pip install python-dotenv
 import json
 
-class MailSlurpClient:
+class MailGenerator:
     def __init__(self):
         load_dotenv()
         api_key = os.getenv('API_KEY')

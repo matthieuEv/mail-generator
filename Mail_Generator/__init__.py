@@ -1,1 +1,1 @@
-from .main import createEmail, getEmailData
+from .main import MailGenerator
