@@ -4,8 +4,8 @@ with open('README.md', 'r') as f:
     long_description = f.read()
 
 setup(
-    name='Mail-Generator',
-    version='0.1.2',
+    name='mail-Generator',
+    version='0.2.0',
     packages=find_packages(),
     install_requires=[
         'mailslurp-client',

@@ -64,8 +64,7 @@ if __name__ == '__main__':
     load_dotenv()
     api_key = os.getenv('API_KEY')
     client = MailGenerator(api_key)
-    id = client.create_email()
-    print(id + "@mailslurp.com")
-    input("Press Enter to continue...")
-    for element in client.get_email_data("70db6f58-2ff6-4b31-b461-2e84bd1f6f81"):
-        print(element, '\n\n\n')
+    # id = client.create_email()
+    # print(id + "@mailslurp.com")
+    # input("Press Enter to continue...")
+    print(client.get_email_data("70db6f58-2ff6-4b31-b461-2e84bd1f6f81"))
